@@ -1,9 +1,14 @@
 import { resolve } from 'path'
 
 export default {
-  root: resolve(__dirname, 'src'),
+  root: resolve(__dirname),
   build: {
-    outDir: '../dist'
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'), 
+      }
+    }
   },
   server: {
     port: 8080
